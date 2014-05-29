@@ -11,4 +11,12 @@ fix_missing <- function(x) {
 }
 
 ## Use lapply to fix all missing values.
+## lapply() is called a functional, because it takes a function as an argument. 
+## Functionals are an important part of functional programming. 
 df[] <- lapply(df,fix_missing)
+
+## lapply technique can be used on column subsets as well.
+df[1:5] <- lapply(df[1:5], fix_missing)
+
+## Use lapply with an anonymous function to find the standard deviation of each column in mtcars
+lapply(mtcars, function(x) sd(x))
