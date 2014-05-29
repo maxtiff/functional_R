@@ -20,3 +20,12 @@ df[1:5] <- lapply(df[1:5], fix_missing)
 
 ## Use lapply with an anonymous function to find the standard deviation of each column in mtcars
 lapply(mtcars, function(x) sd(x))
+
+## Use integrate() and an anonymous function to find the area under the curve for the following functions. Use Wolfram Alpha to check your answers.
+
+#   y = x ^ 2 - x, x in [0, 10]
+#   y = sin(x) + cos(x), x in [-pi, pi]
+#   y = exp(x) / x, x in [10, 20]
+
+function(x) integrate(x, lower=10, upper=10)
+function(x ^ 2 - x) integrate(x ^ 2 - x, lower=0, upper=10)
