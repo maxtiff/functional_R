@@ -1,3 +1,5 @@
+#### http://adv-r.had.co.nz/Functional-programming.html
+
 ## Create random data set that uses '-99' in the place of missing values.
 set.seed(1014)
 df <- data.frame(replicate(6, sample(c(1:10, -99), 10, rep = TRUE)))
