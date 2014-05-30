@@ -25,9 +25,10 @@ lapply(mtcars, function(x) sd(x))
 
 ## Use integrate() and an anonymous function to find the area under the curve for the following functions. Use Wolfram Alpha to check your answers.
 
-#   y = x ^ 2 - x, x in [0, 10]
-#   y = sin(x) + cos(x), x in [-pi, pi]
-#   y = exp(x) / x, x in [10, 20]
+  #   y = x ^ 2 - x, x in [0, 10]
+  #   y = sin(x) + cos(x), x in [-pi, pi]
+  #   y = exp(x) / x, x in [10, 20]
 
-function(x) integrate(x, lower=10, upper=10)
-function(x ^ 2 - x) integrate(x ^ 2 - x, lower=0, upper=10)
+integrate(function(x) x ^ 2 - x, 0, 10)
+integrate(function(x) sin(x) + cos(x), -pi,pi)
+integrate(function(x) exp(x) / x, 10, 20)
