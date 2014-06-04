@@ -32,3 +32,18 @@ lapply(mtcars, function(x) sd(x))
 integrate(function(x) x ^ 2 - x, 0, 10)
 integrate(function(x) sin(x) + cos(x), -pi,pi)
 integrate(function(x) exp(x) / x, 10, 20)
+
+## Parent function that creates child functions of square and cube.
+power <- function(exponent) {
+  function(x) {
+    x ^ exponent
+  } 
+}
+
+square <- power(2)
+square(2)
+square(4)
+
+cube <- power(3)
+cube(2)
+cube(4)
