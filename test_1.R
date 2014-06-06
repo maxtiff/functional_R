@@ -23,7 +23,7 @@ df[1:5] <- lapply(df[1:5], fix_missing)
 ## Use lapply with an anonymous function to find the standard deviation of each column in mtcars
 lapply(mtcars, function(x) sd(x)/mean(x))
 
-## Use integrate() and an anonymous function to find the area under the curve for the following functions. Use Wolfram Alpha to check your answers.
+## Use integrate() and an anonymous function to find the area under the curve for the following functions.
 
   #   y = x ^ 2 - x, x in [0, 10]
   #   y = sin(x) + cos(x), x in [-pi, pi]
@@ -40,10 +40,53 @@ power <- function(exponent) {
   } 
 }
 
-square <- power(2)
-square(2)
-square(4)
+  square <- power(2)
+  square(2)
+  square(4)
+  
+  cube <- power(3)
+  cube(2)
+  cube(4)
 
-cube <- power(3)
-cube(2)
-cube(4)
+## Create an closure that records the amount of times that the function has been called.
+new_counter <- function() {
+  i <- 0
+  function() {
+    i <<- i + 1
+    i
+  }
+}
+
+## Illogical variations on new_counter function:
+
+  ## Does not create a function
+  i <- 0
+  new_counter2 <- function() {
+    i <<- i + 1
+    i
+  }
+
+  ## Counter always resets because variable 'i' does not go beyond the current environment.
+  new_counter3 <- function() {
+    i <- 0
+    function() {
+      i <- i + 1
+      i
+    }
+  }
+
+
+# Create a function that creates functions that compute the ith central moment of a numeric vector. You can test it by running the following code:
+#   
+#   m1 <- moment(1)
+#   m2 <- moment(2)
+# 
+#   x <- runif(100)
+#   stopifnot(all.equal(m1(x), 0))
+#   stopifnot(all.equal(m2(x), var(x) * 99 / 100))
+
+moment <- function(x) {
+  
+  
+  
+}
